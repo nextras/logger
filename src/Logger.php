@@ -43,7 +43,7 @@ class Logger implements ILogger
 
 		if ($message instanceof Throwable) {
 			$context['exception'] = $message;
-			$message = '';
+			$message = $message->getMessage();
 		}
 
 		$this->monolog->addRecord(
